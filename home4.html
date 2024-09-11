@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="images (4).jpeg" rel="icon">
+    <title>E-Learning Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: none;
+        }
+        .navbar-links {
+            display: flex;
+        }
+        .navbar-links a {
+            margin-right: 15px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .buttons a {
+            background-color: #00bfff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .buttons a:hover {
+            background-color: #009acd;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <a href="#">eLEARNING</a>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        &#9776;
+    </div>
+    <div class="navbar-links">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">COURSES</a>
+        <div class="dropdown">
+            <a href="#">PAGES</a>
+            <div class="dropdown-content">
+                <ul>
+               <li><a href="#">Page 1</a></li>
+                 <li><a href="#">Page 2</a></li>
+             </ul>
+            </div>
+        </div>
+        <a href="#">CONTACT</a>
+    </div>
+</div>
+
+<div class="carousel">
+    <img src="https://via.placeholder.com/1200x400" alt="Slide 1" class="active">
+    <img src="https://via.placeholder.com/1200x400/ff7f7f" alt="Slide 2">
+    <img src="https://via.placeholder.com/1200x400/7f7fff" alt="Slide 3">
+    <div class="carousel-text">
+        <h2>Best Online Courses</h2>
+        <p>The Best Online Learning Platform</p>
+        <div class="buttons">
+            <a href="#">Read More</a>
+            <a href="#">Join Now</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const links = document.querySelector('.navbar-links');
+        if (links.style.display === 'block') {
+            links.style.display = 'none';
+        } else {
+            links.style.display = 'block';
+        }
+    }
+
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+
+    function changeImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+    }
+
+    setInterval(changeImage, 3000);
+</script>
+
+</body>
+</html>
