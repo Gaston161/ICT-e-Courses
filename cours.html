@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ajouter votre CSS si nécessaire -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
+    <script>
+        // Configuration Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBD8vDGeQa9XKGFjcpIvve3zDzebxxWSJ4",
+  authDomain: "ict-learning-81af7.firebaseapp.com",
+  databaseURL: "VOTRE_DATABASE_URL",
+  projectId: "ict-learning-81af7",
+  storageBucket: "ict-learning-81af7.appspot.com",
+  messagingSenderId: "122269149930",
+  appId: "1:122269149930:web:79797b1bcf54db78138593",
+  measurementId: "G-9SS7K68FGG"
+
+
+           
+        };
+
+        // Initialiser Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Fonction pour charger les cours
+        function afficherCours() {
+            const coursList = document.getElementById('coursList');
+            coursList.innerHTML = ''; // Effacer la liste avant de la remplir
+
+            const coursRef = database.ref('cours');
+            coursRef.on('value', (snapshot) => {
+                snapshot.forEach((childSnapshot) => {
+                    const cours = childSnapshot.val();
+                    const li = document.createElement('li');
+                    li.textContent = `${cours.nom} - ${cours.description}`;
+                    coursList.appendChild(li);
+                });
+            });
+        }
+
+        // Appeler la fonction lorsque la page est chargée
+        window.onload = afficherCours;
+
+        
+        // Fonction pour ajouter un commentaire
+        function ajouterCommentaire(coursId, username, commentaire) {
+            db.collection("cours").doc(coursId).collection("comments").add({
+                username: username,
+                comment: commentaire,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
+            .then(() => {
+                console.log("Commentaire ajouté avec succès !");
+            })
+            .catch((error) => {
+                console.error("Erreur lors de l'ajout du commentaire : ", error);
+            });
+        }
+
+        // Fonction pour afficher les commentaires
+        function afficherCommentaires(coursId) {
+            db.collection("cours").doc(coursId).collection("comments").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    console.log(`${doc.data().username}: ${doc.data().comment} (${doc.data().timestamp})`);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Liste des Cours</h1>
+    <ul id="coursList"></ul>
+    <button onclick="window.history.back()">Retour</button> <!-- Bouton pour revenir à la page d'accueil -->
+    <button onclick="ajouterCommentaire('coursId1', 'Utilisateur1', 'Ceci est un commentaire !')">Ajouter un commentaire</button>
+    <button onclick="afficherCommentaires('coursId1')">Afficher les commentaires</button>
+
+</body>
+</html>
