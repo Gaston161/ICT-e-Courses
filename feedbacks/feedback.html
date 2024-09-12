@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>ICT University Portal</h2>
+        <ul>
+            <li>Dashboard</li>
+            <li>Cases</li>
+            <li>Courses</li>
+            <li>Documents</li>
+            <li>Fee Receipt</li>
+            <li>Knowledge Base</li>
+            <li>Transcripts</li>
+            <li>My Wallet</li>
+            <li>Login into the Moodle</li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <h1>Feedback</h1>
+        <h3>Feedback Details</h3>
+        <form id="feedback-form">
+            <label for="subject">Subject: *</label>
+            <input type="text" id="subject" required>
+
+            <label for="description">Description: *</label>
+            <textarea id="description" rows="4" required></textarea>
+
+            <button type="submit">SUBMIT</button>
+        </form>
+        <div id="feedback-list"></div>
+    </div>
+
+    <script>
+        // Configuration Firebase
+        const firebaseConfig = {
+    apiKey: "AIzaSyBD8vDGeQa9XKGFjcpIvve3zDzebxxWSJ4",
+  authDomain: "ict-learning-81af7.firebaseapp.com",
+  projectId: "ict-learning-81af7",
+  storageBucket: "ict-learning-81af7.appspot.com",
+  messagingSenderId: "122269149930",
+  appId: "1:122269149930:web:79797b1bcf54db78138593",
+  measurementId: "G-9SS7K68FGG"
+  };
+
+// Initialiser Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Référence à Firestore
+const db = firebase.firestore();
+
+// Soumettre le formulaire de feedback
+document.getElementById('feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const subject = document.getElementById('subject').value;
+    const description = document.getElementById('description').value;
+
+    db.collection('feedbacks').add({
+        subject: subject,
+        description: description,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+        document.getElementById('feedback-form').reset();
+        loadFeedbacks(); // Recharge les feedbacks après soumission
+    }).catch((error) => {
+        console.error('Erreur lors de l\'ajout de feedback:', error);
+    });
+});
+
+// Charger les feedbacks
+function loadFeedbacks() {
+    const feedbackList = document.getElementById('feedback-list');
+    feedbackList.innerHTML = ''; // Réinitialiser la liste
+
+    db.collection('feedbacks').orderBy('timestamp', 'desc').get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const feedback = doc.data();
+            const feedbackItem = document.createElement('div');
+            feedbackItem.innerHTML = `<strong>${feedback.subject}</strong><p>${feedback.description}</p>`;
+            feedbackList.appendChild(feedbackItem);
+        });
+    });
+}
+
+// Charger les feedbacks au démarrage
+loadFeedbacks();
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header img {
+            height: 40px;
+            margin-right: 15px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .team-member {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .team-member h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .team-member p {
+            margin: 0;
+            color: #666;
+        }
+        .social-links {
+            margin-top: 10px;
+        }
+        .social-links a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #00aced;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .team-member {
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            .team-member {
+                width: calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .team-member {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo">
+    <h1>eLEARNING</h1>
+</header>
+
+<div class="content">
+    <h2>Our Team</h2>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="member1.jpg" alt="Instructor Name">
+            <h3>Instructor Name</h3>
+            <p>Designation</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="member2.jpg" alt="Instructor Name">
+            <h3>Instructor Name</h3>
+            <p>Designation</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <!-- Add more team members as needed -->
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; Your Site Name, All Rights Reserved. Designed by HTML Codex</p>
+    <p>123 Street, New York, USA | +012 345 67890 | info@example.com</p>
+</div>
+
+</body>
+</html>
