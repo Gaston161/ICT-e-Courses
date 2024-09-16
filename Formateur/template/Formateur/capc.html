@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualiseur de Documents PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .document-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            transition: transform 0.2s;
+            cursor: pointer;
+            text-align: center;
+        }
+        .document-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .document-title {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .document-info {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .document-container {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .close-button {
+            margin-top: 10px;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+<body>
+
+    <h1>Liste des Documents PDF</h1>
+    <div class="document-grid" id="documentGrid"></div>
+
+    <div class="document-container" id="documentContainer">
+        <div id="documentContent"></div>
+        <button class="close-button" onclick="closeDocument()">Fermer</button>
+        <button onclick="openFullDocument()">En savoir plus</button>
+    </div>
+
+    <script>
+        // Configuration de Firebase
+        const firebaseConfig = {
+    apiKey: "AIzaSyBD8vDGeQa9XKGFjcpIvve3zDzebxxWSJ4",
+  authDomain: "ict-learning-81af7.firebaseapp.com",
+  projectId: "ict-learning-81af7",
+  storageBucket: "ict-learning-81af7.appspot.com",
+  messagingSenderId: "122269149930",
+  appId: "1:122269149930:web:79797b1bcf54db78138593",
+  measurementId: "G-9SS7K68FGG"
+  };
+
+        // Initialiser Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Récupérer les documents de Firestore
+        async function fetchDocuments() {
+            const documents = [];
+            const snapshot = await db.collection('documents').get();
+            snapshot.forEach(doc => {
+                documents.push({ id: doc.id, ...doc.data() });
+            });
+            displayDocuments(documents);
+        }
+
+        // Afficher les documents dans la grille
+        function displayDocuments(documents) {
+            const documentGrid = document.getElementById('documentGrid');
+            documentGrid.innerHTML = ''; // Réinitialiser la grille
+
+            documents.forEach((doc, index) => {
+                const documentItem = document.createElement('div');
+                documentItem.className = 'document-item';
+                documentItem.onclick = () => showDocument(index);
+                documentItem.innerHTML = `
+                    <img src="${doc.imageUrl || 'https://via.placeholder.com/150'}" alt="${doc.title}" />
+                    <div class="document-title">${doc.title}</div>
+                    <div class="document-info">Téléversé par ${doc.uploader}</div>
+                    <div class="document-info">${doc.rating} (${doc.reviews} évaluations)</div>
+                `;
+                documentGrid.appendChild(documentItem);
+            });
+        }
+
+        let currentIndex = 0;
+
+        function showDocument(index) {
+            currentIndex = index;
+            document.getElementById("documentContent").innerHTML = ''; // Réinitialiser le contenu
+            loadPdf(documents[index].url);
+            document.getElementById("documentContainer").style.display = 'block';
+        }
+
+        async function loadPdf(url) {
+            const loadingTask = pdfjsLib.getDocument(url);
+            try {
+                const pdf = await loadingTask.promise;
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const viewport = page.getViewport({ scale: 1 });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    await page.render({ canvasContext: context, viewport: viewport }).promise;
+                    document.getElementById("documentContent").appendChild(canvas);
+                }
+            } catch (error) {
+                document.getElementById("documentContent").innerText = "Erreur lors du chargement du document : " + error.message;
+            }
+        }
+
+        function openFullDocument() {
+            window.open(documents[currentIndex].url, '_blank');
+        }
+
+        function closeDocument() {
+            document.getElementById("documentContainer").style.display = 'none';
+            document.getElementById("documentContent").innerHTML = ''; // Réinitialiser le contenu
+        }
+
+        // Appeler la fonction pour récupérer les documents dès le chargement de la page
+        fetchDocuments();
+    </script>
+
+</body>
+</html>

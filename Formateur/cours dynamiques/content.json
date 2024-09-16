@@ -1,0 +1,98 @@
+{
+    "element1": {
+        "topics": [
+            {
+                "title": "Epreuves de control continu",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/technical%20writing%20%20for%20enginneers%2Fassignment%202.docx?alt=media&token=37a845cc-859b-4dd0-b968-69ea4b577031",
+                "linkText": "Technical writing for enginners CA",
+                "description": "Description pour le Topic 1."
+            },
+            {
+                "title": "Epreuves de session normale",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/technical%20writing%20%20for%20enginneers%2FFINAL%20EXAMS%20TECHNICAL%20WRITING.docx?alt=media&token=05db000b-707c-4604-8c10-bcf656216fcf",
+                "linkText": "Final exam ",
+                "description": "Description pour le Topic 2."
+            }
+        ]
+    },
+    "element2": {
+        "topics": [
+            {
+                "title": "Epreuves de control continu",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/introduction%20to%20software%20enginnering%2FSoftware%20Modelling%20Exercise.pdf?alt=media&token=a1a5693c-06be-4c4b-861c-2189f759c472",
+                "linkText": "Software modelling CA",
+                "description": "Description pour le Topic 3."
+            },
+            {
+                "title": "Epreuves de session normale",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/introduction%20to%20software%20enginnering%2FIntroduction%20to%20software%20Engineering%20Final%20Exam%20Specifications.pdf?alt=media&token=9166781d-7f7d-44bf-9d84-4debedb80bf0",
+                "linkText": "Introduction to Software engineering final exam project",
+                "description": "Description pour le Topic 2."
+            }
+        ]
+    },
+    "element3": {
+        "topics": [
+            {
+                "title": "Epreuves de control continu",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/computer%20organization%20and%20architecture%2Fmoodle%201.pdf?alt=media&token=1e4ae80c-540c-4c17-8afe-62d347bf12d5",
+                "linkText": "Computer organisation course chap 1 ",
+                "description": "Description pour le Topic 3."
+            },
+            {
+                "title": "Epreuves de session normale",
+                "pdfLink": "https://your-firebase-storage-url/document2.pdf",
+                "linkText": "Introduction à la Rédaction Technique",
+                "description": "Description pour le Topic 2."
+            }
+        ]
+    },
+    "element4": {
+        "topics": [
+            {
+                "title": "Epreuves de control continu",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/cours%20java%2FOOP%20Java%20CA.pdf?alt=media&token=ab147164-5717-4ded-bfd3-c2da94e8b207",
+                "linkText": "OOP CA",
+                "description": "Description pour le Topic 3."
+            },
+            {
+                "title": "Epreuves de session normale",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/cours%20java%2Ffinal%20exam%20java.pdf?alt=media&token=45ebc166-7f76-4bf8-a958-247ccac3aab2",
+                "linkText": "Programming in java final exam",
+                "description": "Description pour le Topic 2."
+            }
+        ]
+    },
+    "element5": {
+        "topics": [
+            {
+                "title": "Epreuves de control continu",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/cours%20python%2FProgramming%20in%20python%20CA%20Fall%202024%20(4).pdf?alt=media&token=5c4e26c6-428a-496e-abcf-0d9cec71e0ce",
+                "linkText": "Programming in python CA",
+                "description": "Description pour le Topic 3."
+            },
+            {
+                "title": "Epreuves de session normale",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/cours%20python%2FProgramming_in_Python_Final_Exam_Projects_095004.pdf?alt=media&token=4b44a5bd-4828-47fe-92e9-f950588886d1",
+                "linkText": "Final exam project",
+                "description": "Description pour le Topic 2."
+            }
+        ]
+    },
+    "element6": {
+        "topics": [
+            {
+                "title": "Epreuves de control continu",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/probability%20and%20statistics%2FTutorial%20sheet%201.pdf?alt=media&token=7ec2048e-43c6-4a1a-87e1-f32be89c3d1b",
+                "linkText": "Tutorial sheet for probability and statistics CA",
+                "description": "Description pour le Topic 3."
+            },
+            {
+                "title": "Epreuves de session normale",
+                "pdfLink": "https://firebasestorage.googleapis.com/v0/b/ict-learning-81af7.appspot.com/o/probability%20and%20statistics%2Ffinal%20exam%20math.pdf?alt=media&token=ba59f389-ef9a-4d08-b821-fffed7eaa377",
+                "linkText": "Probability and statistics final exam",
+                "description": "Description pour le Topic 2."
+            }
+        ]
+    }
+}
