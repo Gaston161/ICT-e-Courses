@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            background-color: #e7f5f2;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: calc(30% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .pink { background-color: #f8d7da; }
+        .orange { background-color: #ffeeba; }
+        .blue { background-color: #d1ecf1; }
+        .card h3 {
+            margin: 0;
+        }
+        .view-more {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .course-list {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .course-item {
+            margin: 10px 0;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="card pink" onclick="showCourses()">
+        <h3 id="course-count">0 Cours Sélectionnés</h3>
+    </div>
+    <div class="card orange">
+        <h3>1 Document</h3>
+        <a href="#" class="view-more">Voir Plus</a>
+    </div>
+    <div class="card blue">
+        <h3>18 Cours</h3>
+        <a href="#" class="view-more">Voir Plus</a>
+    </div>
+    <div class="card blue">
+        <h3>2 Anciens Examens</h3>
+        <a href="#" class="view-more">Voir Plus</a>
+    </div>
+    <div class="card blue">
+        <h3>20 Transactions de Wallet</h3>
+        <a href="#" class="view-more">Voir Plus</a>
+    </div>
+</div>
+
+<div class="course-list" id="course-list">
+    <h2>Liste des Cours Sélectionnés</h2>
+    <div id="courses"></div>
+</div>
+
+<script>
+    // Configuration de Firebase
+    const firebaseConfig = {
+        // Remplacez ces valeurs par votre configuration Firebase
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+    };
+    
+    // Initialiser Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    async function showCourses() {
+        const courseList = document.getElementById('course-list');
+        const coursesDiv = document.getElementById('courses');
+        coursesDiv.innerHTML = ''; // Réinitialiser le contenu
+
+        const snapshot = await db.collection('cours').get();
+        let courseCount = snapshot.size;
+
+        document.getElementById('course-count').innerText = `${courseCount} Cours Sélectionnés`;
+
+        snapshot.forEach(doc => {
+            const courseData = doc.data();
+            const courseItem = document.createElement('div');
+            courseItem.className = 'course-item';
+            courseItem.innerText = `${courseData.title} - Téléversé par ${courseData.uploader} ${courseData.grade}% (${courseData.evaluations} évaluations)`;
+            coursesDiv.appendChild(courseItem);
+        });
+
+        courseList.style.display = 'block'; // Afficher la liste des cours
+    }
+</script>
+
+</body>
+</html>

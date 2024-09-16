@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours - Découvrez les API</title>
+    <link rel="stylesheet" href="style2.css">
+   
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+video {
+    width: 100%;
+    max-height: 400px;
+}
+
+button {
+    background-color: #00BFFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0099cc;
+}
+
+.course-content {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+    </style>
+    <div class="container">
+        <header>
+            <h1>Découvrez les API</h1>
+            <p>Bienvenue sur l’école 100% en ligne des métiers qui ont de l’avenir.</p>
+        </header>
+        
+        <div class="video-container">
+            <video id="course-video" controls>
+                <source id="video-source" src="" type="video/mp4">
+                Votre navigateur ne prend pas en charge la vidéo.
+            </video>
+            <button id="download-button">Télécharger la vidéo</button>
+        </div>
+
+        <div class="course-content">
+            <h2>Contenu du cours</h2>
+            <p>Voici le contenu détaillé de ce cours sur les API. Vous apprendrez...</p>
+            <!-- Ajoutez ici le contenu du cours -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .navbar {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            height: 40px;
+        }
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ff4081;
+            font-weight: bold;
+        }
+        .content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .content h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .section {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .column {
+            margin: 0 20px;
+        }
+        .column h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .tag {
+            background-color: #ffe6e6;
+            color: #ff4081;
+            border-radius: 15px;
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.png" alt="Logo">
+        <div>
+            <a href="#">Tableau De Bord</a>
+            <a href="#">Mes Cours</a>
+            <a href="#">Bibliothèque De Contenu</a>
+            <a href="#">Mes Certificats</a>
+            <a href="#">FAQ</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Bonjour, G</h1>
+        <div class="section">
+            <div class="column">
+                <h2>Sujets</h2>
+                <p>Cliquez sur un sujet pour voir les cours correspondants</p>
+                <div class="tags">
+                    <div class="tag">Compétences numériques et transformation</div>
+                    <div class="tag">Entreprenariat</div>
+                    <div class="tag">Gestion et direction</div>
+                    <div class="tag">Orientation professionnelle</div>
+                    <div class="tag">Santé</div>
+                    <div class="tag">Agriculture</div>
+                    <div class="tag">Gouvernance</div>
+                    <div class="tag">Tourisme et Hôtellerie</div>
+                    <div class="tag">Environnement et Climat</div>
+                    <div class="tag">Intelligence Artificielle</div>
+                    <div class="tag">Voir tous les cours</div>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Initiatives</h2>
+                <p>Cliquez sur une initiative pour voir les cours correspondants</p>
+                <div class="tags">
+                    <div class="tag">Yoma (Marché pour l'autonomisation des jeunes)</div>
+                    <div class="tag">eAcadémie Tourisme et Hospitalité</div>
+                    <div class="tag">Recherche en Ligne & Éducation aux Médias</div>
+                    <div class="tag">Intelligence Artificielle pour Tous</div>
+                    <div class="tag">Formation environnementale pour l'industrie de la mode</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

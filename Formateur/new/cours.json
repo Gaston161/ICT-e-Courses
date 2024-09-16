@@ -1,0 +1,16 @@
+[
+  {
+    "titre": "Topic 1",
+    "pdf": "path/to/document1.pdf",
+    "contenu": "Ceci est un guide pour connaître certains des documents techniques écrits par des ingénieurs."
+  },
+  {
+    "titre": "Topic 2",
+    "pdf": "path/to/document2.pdf",
+    "contenu": [
+      "À propos de la rédaction technique",
+      "Rédaction technique vs. académique",
+      
+    ]
+  }
+]

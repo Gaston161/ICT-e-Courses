@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+        .left {
+            flex: 1;
+            background-image: url('76687.jpg'); /* Remplace par l'URL de ton image */
+            background-size: cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        .left h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .left p {
+            font-size: 18px;
+        }
+        .right {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right h2 {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            background-color: #6f5dfb;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #5a4bcf;
+        }
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .social-login button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 48%;
+            cursor: pointer;
+        }
+        .forgot-password {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h1>Tout ce dont vous avez besoin,</h1>
+
+        <p>pour créer tout ce que vous voulez.</p>
+    </div>
+    <div class="right">
+        <h2>Bienvenue sur Runway</h2>
+        <div class="input-group">
+            <label for="username">Nom d'utilisateur ou Email</label>
+            <input type="text" id="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" required>
+        </div>
+        <button class="btn">Se connecter</button>
+        <div class="social-login">
+            <button>Se connecter avec Google</button>
+            <button>Se connecter avec Apple</button>
+        </div>
+        <div class="forgot-password">
+            <a href="#">Mot de passe oublié ?</a>
+        </div>
+    </div>
+</body>
+</html>
