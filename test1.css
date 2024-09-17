@@ -1,0 +1,59 @@
+/* Container for the carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide the overflow for smooth scrolling */
+  }
+  
+  /* Instructor grid (will scroll horizontally) */
+  .instructor-grid {
+    display: flex;
+    gap: 20px; /* Spacing between cards */
+    transition: transform 0.5s ease-in-out; /* Smooth scrolling */
+    scroll-behavior: smooth;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    padding: 20px;
+    scrollbar-width: none; /* Hide default scrollbar for Firefox */
+  }
+  
+  .instructor-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, etc. */
+  }
+  
+  /* Individual instructor cards */
+  .instructor-card {
+    min-width: 200px;
+    flex-shrink: 0; /* Prevent shrinking */
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Carousel navigation buttons */
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .carousel-prev {
+    left: 0; /* Left button */
+  }
+  
+  .carousel-next {
+    right: 0; /* Right button */
+  }
+  
+  /* Hover effect for buttons */
+  .carousel-prev:hover,
+  .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }

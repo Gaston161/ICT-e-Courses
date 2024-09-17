@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICT E-Learning</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/media_queries.css">
+  <link rel="stylesheet" href="./assets/css/animation.css">
+  <link rel="stylesheet" href="test1.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800;900&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+    <link href="./assets/images/images (4).jpeg" rel="icon">
+
+
+
+<script type="module" src="firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js/firebase-analytics.js"></script>
+<script src="firebase-config.js"></script>
+<!-- Ton propre fichier script -->
+<script src="./assets/js/script.js"></script>
+ <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+  
+
+</head>
+
+<body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBD8vDGeQa9XKGFjcpIvve3zDzebxxWSJ4",
+      authDomain: "ict-learning-81af7.firebaseapp.com",
+      databaseURL: "https://ict-learning-81af7-default-rtdb.firebaseio.com",
+      projectId: "ict-learning-81af7",
+      storageBucket: "ict-learning-81af7.appspot.com",
+      messagingSenderId: "122269149930",
+      appId: "1:122269149930:web:79797b1bcf54db78138593",
+      measurementId: "G-9SS7K68FGG"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+  <!--
+    - main container
+  -->
+
+  <div class="container">
+
+            <!--
+              - #HEADER
+            -->
+
+    <header>
+
+      <nav class="navbar">
+
+        <div class="navbar-brand">
+          <img src="./assets/images/ictu-logo.png" alt="ICT logo" width="90px" height="50px">
+        </div>
+
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#course">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a href="#blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact">Contact Us</a>
+          </li>
+
+        </ul>
+
+       <a href="last examinations.html"><button class="btn btn-primary" class="Get started">
+          <p class="btn-text">Get Started</p>
+          <span class="square"></span>
+        </button></a>
+
+        <button class="nav-toggle-btn">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+      </nav>
+    </header>
+
+
+
+
+
+    <main>
+
+      <!--
+        - #HOME SECTION
+      -->
+
+      <section class="home" id="home">
+
+        <div class="deco-shape shape-1">
+          <img src="./assets/images/shape-1.png" alt="art shape" width="70">
+        </div>
+        <div class="deco-shape shape-2">
+          <img src="./assets/images/shape-2.png" alt="art shape" width="55">
+        </div>
+
+        <div class="home-left">
+
+
+          <h1 class="main-heading">
+            Welcome To ICTU 
+            <span class="underline-img">Learning <img src="./assets/images/banner-line.png" alt="line"></span>
+          </h1>
+
+          <p class="section-text" style="color: #020202;">
+            A platForm dedicated to enhancing your Learning experience through interative courses and resources.
+          </p>
+
+          <div class="home-btn-group">
+            <button class="btn btn-primary">
+            <a href="#Courses" > <p class="btn-text">Explore Courses</p></a>
+              <span class="square"></span>
+            </button>
+
+            <button class="btn btn-secondary">
+              <p class="btn-text">Contact Us</p>
+              <span class="square"></span>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="home-right">
+
+          <div class="img-box">
+
+            <img src="./assets/images/IMG-20240827-WA0001.jpg" alt="banner image" class="banner-img" width="15%">
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!--
+        - #ABOUT SECTION
+      -->
+
+      <section class="about" id="about">
+
+        <div class="about-left">
+
+          <div class="img-box">
+            <img src="./assets/images/IMG-20240916-WA0035.jpg" alt="about person" class="about-img" style="width: 700px; margin-bottom: 100px; height: 100%;">
+          </div>
+
+        </div>
+
+        <div class="about-right">
+
+          <p class="section-subtitle">About Us</p>
+
+          <h2 class="section-title">We Have Best Online Education</h2>
+
+          <p class="section-text">
+            Morbi porttitor ligula id varius consectetur. Integer ipsum justo, congue sit amet massa vel, porttitor
+            semper magna.
+            Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </p>
+
+          <ul class="about-ul">
+
+            <li>
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <p>Suspendisse nunc massa, pellentesque eu nibh eget.</p>
+            </li>
+
+            <li>
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <p>Suspendisse nunc massa, pellentesque eu nibh eget.</p>
+            </li>
+
+            <li>
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <p>Suspendisse nunc massa, pellentesque eu nibh eget.</p>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-primary">
+            <p class="btn-text">Explore More</p>
+            <span class="square"></span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #COURSE SECTION
+      -->
+
+      <section class="course" id="course">
+
+        <p class="section-subtitle">Our Online Courses</p>
+
+        <h2 class="section-title">Find The Right Online Course For You</h2>
+
+        <div class="course-grid">
+
+          <div class="course-card">
+
+            <div class="course-banner">
+              <img src="./assets/images/python.png" alt="course banner" >
+
+              <div class="course-tag-box"  class="Get started">
+                <a href="last examinations.html" class="badge-tag orange">Get started</a>
+              </div>
+            </div>
+
+            <div class="course-content">
+
+              <h3 class="card-title">
+                <a href="#">Programming in python.</a>
+              </h3>
+
+              <div class="wrapper border-bottom">
+
+                <div class="author">
+
+                  <a href="#" class="author-name">Dr Keyampi Martial </a>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <div class="wrapper">
+                <div class="enrolled">
+                  <div class="icon-user">
+                    <img src="./assets/images/student-icon.png" alt="user icon">
+                  </div>
+
+                  <p>169k</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="course-card">
+
+            <div class="course-banner">
+              <img src="./assets/images/course-11.jpg" alt="course banner">
+
+              <div class="course-tag-box"  class="Get started">
+                <a href="last examinations.html" class="badge-tag orange">Get Started</a>
+              </div>
+            </div>
+
+            <div class="course-content">
+
+              <h3 class="card-title">
+                <a href="#">Programming in java 1 & 2.</a>
+              </h3>
+
+              <div class="wrapper border-bottom">
+
+                <div class="author">
+
+                  <a href="#" class="author-name">Mr Koungang Rostand</a>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <div class="wrapper">
+                <div class="enrolled">
+                  <div class="icon-user">
+                    <img src="./assets/images/student-icon.png" alt="user icon">
+                  </div>
+
+                  <p>169</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="course-card">
+
+            <div class="course-banner">
+              <img src="./assets/images/writing.jfif" alt="course banner" style="height: 210px;">
+
+              <div class="course-tag-box"  class="Get started">
+                <a href="last examinations.html" class="badge-tag orange">Get Started</a>
+              </div>
+            </div>
+
+            <div class="course-content">
+
+              <h3 class="card-title">
+                <a href="#">Technical Writing For Engineers .</a>
+              </h3>
+              <div class="wrapper border-bottom">
+
+                <div class="author">
+
+                  <a href="#" class="author-name"> Dr Abdallah</a>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <div class="wrapper">
+                <div class="enrolled">
+                  <div class="icon-user">
+                    <img src="./assets/images/student-icon.png" alt="user icon">
+                  </div>
+
+                  <p>169</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="course-card">
+
+            <div class="course-banner">
+              <img src="./assets/images/probability.jfif" alt="course banner">
+
+              <div class="course-tag-box"  class="Get started">
+                <a href="last examinations.html" class="badge-tag orange">Get Started</a>
+              </div>
+            </div>
+
+            <div class="course-content">
+
+              <h3 class="card-title">
+                <a href="#">Probability and statistics.</a>
+              </h3>
+
+              <div class="wrapper border-bottom">
+
+                <div class="author">
+
+                  <a href="#" class="author-name">Engr. Andrew Agbor</a>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <div class="wrapper">
+                <div class="enrolled">
+                  <div class="icon-user">
+                    <img src="./assets/images/student-icon.png" alt="user icon">
+                  </div>
+
+                  <p>169</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="course-card">
+
+            <div class="course-banner">
+              <img src="./assets/images/software.jfif" alt="course banner">
+
+              <div class="course-tag-box"  class="Get started">
+                <a href="last examinations.html" class="badge-tag orange">Get started</a>
+              </div>
+            </div>
+
+            <div class="course-content">
+
+              <h3 class="card-title">
+                <a href="#">Introduction to software engineering.</a>
+              </h3>
+
+              <div class="wrapper border-bottom">
+
+                <div class="author">
+
+                  <a href="#" class="author-name">Engr. Tekoh Palma</a>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <div class="wrapper">
+                <div class="enrolled">
+                  <div class="icon-user">
+                    <img src="./assets/images/student-icon.png" alt="user icon">
+                  </div>
+
+                  <p>169</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="course-card">
+
+            <div class="course-banner">
+              <img src="./assets/images/computer.jfif" alt="course banner">
+
+              <div class="course-tag-box"  class="Get started">
+                <a href="last examinations.html" class="badge-tag orange">Get started</a>
+              </div>
+            </div>
+
+            <div class="course-content">
+
+              <h3 class="card-title">
+                <a href="#">Computer Organization and Architecture.</a>
+              </h3>
+
+              <div class="wrapper border-bottom">
+
+                <div class="author">
+
+                  <a href="#" class="author-name">Dr. Keyampi Martial</a>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <div class="wrapper">
+                <div class="enrolled">
+                  <div class="icon-user">
+                    <img src="./assets/images/student-icon.png" alt="user icon">
+                  </div>
+
+                  <p>169</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <button class="btn btn-primary">
+          <p class="btn-text">View All Course</p>
+          <span class="square"></span>
+        </button>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #EVENT SECTION
+      -->
+
+      <section class="event">
+
+        <div class="event-left">
+
+          <div class="event-banner">
+            <img src="./assets/images/rrt.jpg" alt="event banner" class="banner-img">
+          </div>
+
+          <button class="play smooth-zigzag-anim-1">
+            <div class="play-icon pulse-anim">
+              <ion-icon name="play-circle"></ion-icon>
+            </div>
+
+            <p>Watch Us !</p>
+          </button>
+
+        </div>
+
+        <div class="event-right">
+
+          <p class="section-subtitle">Our Events</p>
+
+          <h2 class="section-title">Join Our Upcoming Events</h2>
+
+          <div class="event-card-group">
+
+            <div class="event-card">
+
+              <div class="content-left">
+                <p class="day">27</p>
+                <p class="month">August, 2024</p>
+              </div>
+
+              <div class="content-right">
+                <div class="schedule">
+                  <p class="time">12:30am To 2:30pm</p>
+                  <p class="place">Dispensaire-Messasi-TheICTU</p>
+                </div>
+
+                <a href="#" class="event-name">AI Tool with Microsoft Conference</a>
+              </div>
+
+            </div>
+
+            <div class="event-card">
+
+              <div class="content-left">
+                <p class="day">07</p>
+                <p class="month">October, 2024</p>
+              </div>
+
+              <div class="content-right">
+                <div class="schedule">
+                  <p class="time">08:00am To 17:00pm</p>
+                  <p class="place">Dispensaire-Messasi-TheICTU</p>
+                </div>
+
+                <a href="#" class="event-name">Fall Semester Opening Day.</a>
+              </div>
+
+            </div>
+
+            <div class="event-card">
+
+              <div class="content-left">
+                <p class="day">25</p>
+                <p class="month">October, 2024</p>
+              </div>
+
+              <div class="content-right">
+                <div class="schedule">
+                  <p class="time">08:00am To 3:00pm</p>
+                  <p class="place">Dispensaire-Messasi-TheICTU</p>
+                </div>
+
+                <a href="#" class="event-name">Matriculation Day</a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #FEATURES SECTION
+      -->
+
+      <section class="features">
+
+        <div class="features-left">
+
+          <p class="section-subtitle">Core Features</p>
+
+          <h2 class="section-title">See What Our Mission Are</h2>
+
+          <ul>
+
+            <li class="features-item">
+              <div class="item-icon-box blue">
+                <img src="./assets/images/feature-icon-1.png" alt="feature icon">
+              </div>
+
+              <div class="wrapper">
+
+                <h3 class="item-title">Student Life</h3>
+
+                <p class="item-text">Nulla vestibulum pretium nibh at dignissim. Aliquam vehicula consectetur dignissim
+                  dictum.</p>
+
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon-box pink">
+                <img src="./assets/images/feature-icon-2.png" alt="feature icon">
+              </div>
+
+              <div class="wrapper">
+
+                <h3 class="item-title">Best Online Class</h3>
+
+                <p class="item-text">Nulla vestibulum pretium nibh at dignissim. Aliquam vehicula consectetur dignissim
+                  dictum.</p>
+
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon-box purple">
+                <img src="./assets/images/feature-icon-3.png" alt="feature icon">
+              </div>
+
+              <div class="wrapper">
+
+                <h3 class="item-title">24x7 Program</h3>
+
+                <p class="item-text">Nulla vestibulum pretium nibh at dignissim. Aliquam vehicula consectetur dignissim
+                  dictum.</p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="features-right">
+          <img src="./assets/images/Screenshot_20240916_113024.jpg" alt="core features image" style="border-radius: 5px;">
+        </div>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #INSTRUCTOR SECTION
+      -->
+
+      <section class="instructor">
+
+
+       
+
+
+      <!--
+        - #INSTRUCTOR SECTION
+      -->
+
+      <section class="instructor">
+
+
+        <h2 class="section-title">Our Team</h2>
+
+        <div class="instructor-grid">
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/1701717423753.jpg" alt="instructor louis sullivan" style="height: 220px; width:200px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">KEGOE Brondon</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG-20240913-WA0001.jpg" alt="instructor camden david" style="height: 200px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">Precious Khan</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG-20240911-WA0002.jpg" alt="instructor fiona dean" style="height: 220px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">Kede Gaston</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG-20231026-WA0008.jpg" alt="instructor cherish sosa" style="width: 155px; margin-left: 35px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">ZAGOP CHRIS</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG-20240911-WA0005.jpg" alt="instructor cherish sosa" style="height: 220px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">Yap Jean</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG_20240916_065943_654.jpg" alt="instructor cherish sosa" style="height: 220px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">Mbey Junior</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG-20240916-WA0025.jpg" alt="instructor cherish sosa" style="height: 220px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">PIABEZIH MCBRIGHT</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG-20240916-WA0028.jpg" alt="instructor cherish sosa" style="height: 220px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">NIUDJOU Maxime</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+
+          <div class="instructor-card">
+
+            <div class="instructor-img-box">
+              <img src="./assets/images/IMG-20240916-WA0029.jpg" alt="instructor cherish sosa" style="height: 220px;">
+
+              <div class="social-link">
+                <a href="#" class="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="#" class="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" class="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <h4 class="instructor-name">SEUGUE Dora</h4>
+
+            <p class="instructor-title">Student</p>
+
+          </div>
+        </div>
+
+      </section>
+
+
+
+
+      <!--
+        - #TESTIMONIALS
+      -->
+
+      <section class="testimonials">
+
+        <div class="testimonials-left">
+
+          <p class="section-subtitle">Testimonial</p>
+
+          <h2 class="section-title">What Our Student Says About Us</h2>
+
+          <p class="section-text">
+            Hello everyone! I hope your okay. Please, leave your comment about this Platform. Have a Good Day! 
+          </p>
+
+        </div>
+
+        <div class="testimonials-right">
+
+          <div class="testimonials-card">
+            <img src="./assets/images/quote.png" alt="quote icon" class="quote-img">
+
+            <p class="testimonials-text">
+              "Hey! I'm Student in level two where i do Cyber Security, and i love this Platform ".
+            </p>
+
+            <div class="testimonials-client">
+
+              <div class="client-img-box">
+                <img src="./assets/images/IMG-20240911-WA0002.jpg" alt="client christine rose" style="width: 30px;">
+              </div>
+
+              <div class="client-detail">
+                <h4 class="client-name">KEDE GASTON </h4>
+
+                <p class="client-title">Stutent</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+      <!--
+        - #CONTACT
+      -->
+
+      <section class="contact">
+
+        <div class="contact-card" id="contact">
+          <img src="./assets/images/cta-bg-img.png" alt="shape" class="contact-card-bg">
+
+          <h2>Start Your Best Online Classes With Us</h2>
+
+          <button class="btn btn-primary">
+            <p class="btn-text">Contact Us</p>
+            <span class="square"></span>
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <!--
+      - #FOOTER
+    -->
+
+    <footer>
+
+      <div class="footer-grid">
+
+        <div class="grid-item">
+
+          <div class="footer-logo">
+            <img src="./assets/images/ictu-logo.png" alt="footer">
+          </div>
+
+          <p class="footer-text">
+            Duis a tempor magna. Maecenas ligula felis, imperdiet quis arcu eget, blandit ultricies risus. Vivamus
+            fringilla urna
+            vel risus congue accumsan.
+          </p>
+
+          <div class="social-link">
+            <a href="#">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="#">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="#">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <a href="#">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+
+        </div>
+
+        <ul class="grid-item">
+
+          <h4 class="item-heading">Our Link</h4>
+
+          <li class="list-item">
+            <a href="#home">Home</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#about">About Us</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#course">Courses</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#blog">Blog</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#contact">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="grid-item">
+
+          <h4 class="item-heading">Other Link</h4>
+
+          <li class="list-item">
+            <a href="#">Instructor</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#">FAQ</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#">Event</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#">Privacy Policy</a>
+          </li>
+
+          <li class="list-item">
+            <a href="#">Term & Condition</a>
+          </li>
+
+        </ul>
+
+        <div class="grid-item">
+
+          <h4 class="item-heading">Subscribe Now</h4>
+
+          <div class="wrapper">
+            <input type="text" name="subscribe" placeholder="Email Address">
+            
+            <button class="send-btn">
+              <ion-icon name="paper-plane"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">
+        Copyright © 2024 <a href="#">Group 20 software enginnering</a>. All rights reserved.
+      </p>
+ 
+    </footer>
+ 
+  </div>
+
+
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #3e24af;
+      }
+      .navbar {
+        background-color: #ffffff;
+        padding: 10px;
+        color: rgb(8, 1, 70);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar a {
+        color: rgb(8, 8, 8);
+        margin: 0 10px;
+      }
+  
+    </style>
+
+  <script>
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Sélectionne tous les boutons ou divs avec la classe "Get started"
+    const getStartedButtons = document.querySelectorAll('.btn.btn-primary, .badge-tag.orange');
+    
+    // Ajouter un écouteur d'événement de clic à chaque bouton ou div
+    getStartedButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        signInWithGoogle();
+      });
+    });
+
+    // Fonction pour gérer l'authentification Google
+    function signInWithGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      const auth = firebase.auth();
+      
+      auth.signInWithPopup(provider)
+        .then((result) => {
+          const user = result.user;
+          
+          // Sauvegarde les données de l'utilisateur dans Firestore
+          saveUserToDatabase(user);
+          
+          // Redirige l'utilisateur après connexion
+          window.location.href = "last_examinations.html";  // Remplace par ton lien
+        })
+        .catch((error) => {
+          console.log("Erreur lors de l'authentification:", error);
+        });
+    }
+
+    // Fonction pour sauvegarder l'utilisateur dans Firestore
+    function saveUserToDatabase(user) {
+      const db = firebase.firestore();
+      db.collection('users').doc(user.uid).set({
+        name: user.displayName,
+        email: user.email,
+        profilePicture: user.photoURL,
+        lastLogin: new Date().toISOString()
+      })
+      .then(() => {
+        console.log("Utilisateur ajouté à la base de données");
+      })
+      .catch((error) => {
+        console.error("Erreur lors de l'ajout de l'utilisateur:", error);
+      });
+    }
+  });
+</script>
+
+</body>
+
+</html>
+
+   
